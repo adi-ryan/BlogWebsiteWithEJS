@@ -1,0 +1,26 @@
+
+footer
+{
+  height: 110px;
+  background-color: black;
+  color: white;
+  padding: 20px;
+  margin-bottom: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+
+
+
+
+@media (max-width: 500px)
+{
+  footer
+  {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 90px;
+  }
+}

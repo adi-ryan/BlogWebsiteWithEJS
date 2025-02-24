@@ -1,0 +1,33 @@
+
+<%- include("partials/header.ejs") %>
+
+
+<!--
+*****THIS IS THE add blog page
+Add blog form here:
+-->
+<form action="<%= url %>" method="post">
+  <% if (locals.blog) { %>
+                        <input type="text" name="blogTitle" maxlength="50" value="<%= blog.blogTitle %>" required>
+                        <input type="text" name="blogAuthor" maxlength="50" value="<%= blog.blogAuthor %>" required> <%
+                        if (typeof(blog.blogContent) === "object") {
+                                                                    let content = "";
+                                                                    for (let i=0;i<blog.blogContent.length;i++)
+                                                                    {
+                                                                      content += blog.blogContent[i] + "\r";
+                                                                    } %>
+                                                                    <textarea name="blogContent" rows="5" required><%= content %></textarea>
+                                                                <% } else { %>
+                                                                          <textarea name="blogContent" rows="5"  required><%= blog.blogContent %></textarea>
+                                                                       <% } } else { %>
+     
+      <input type="text" name="blogTitle" maxlength="50" placeholder="Title" required>
+      <input type="text" name="blogAuthor" maxlength="50"  placeholder="Author" required>
+      <textarea name="blogContent" rows="5"  placeholder="Blog content" required></textarea> <% } %>
+  <button>Submit</button>
+</form>
+
+
+
+
+<%- include("partials/footer.ejs") %>

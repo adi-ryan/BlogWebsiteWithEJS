@@ -1,0 +1,37 @@
+html
+{
+  height: 100%;
+  
+}
+
+body
+{
+  height: calc(100% - 80px);
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  font-family: "Sintony", serif;
+  margin-top: 80px;
+  margin-left: 0;
+  margin-right: 0;
+  box-sizing: border-box;
+  justify-content: space-between;
+  flex: 1;
+  background-color: rgb(92, 92, 92);
+  margin-left: 0;
+  margin-bottom: 0;
+}
+@media (max-width: 1000px)
+{
+  body
+  {
+    margin-top: 75px;
+    height: calc(100% - 75px);
+  }
+}
+
+
+
+
+
+

@@ -1,0 +1,47 @@
+form
+{
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+form input
+{
+  height: 50px;
+  font-size: 22px;
+}
+form textarea
+{
+  height: 380px;
+  font-size: 22px;
+  resize: vertical;
+  max-height: 55vh;
+  min-height: 300px;
+}
+form button
+{
+font-size: 30px;
+align-self: flex-start;
+cursor: pointer;
+background-color: rgb(173, 255, 47);
+border: none;
+border-radius: 10px;
+padding: 5px 20px;
+}
+form button:hover
+{
+  background-color: rgb(135, 198, 39);
+  box-shadow: 0 0 15px rgba(134, 198, 39, 0.5);
+}
+
+
+@media (max-width: 500px)
+{
+    form textarea
+  {
+    max-height: 35vh;
+    min-height: 200px;
+  }
+}

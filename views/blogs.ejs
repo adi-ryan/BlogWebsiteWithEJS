@@ -1,0 +1,51 @@
+<!--
+*****THIS IS THE MAIN MENU PAGE
+1. Nav bar with logo
+2. Blogs (No blogs added if none)
+4. Footer
+-->
+
+
+
+
+<%- include("partials/header.ejs") %>
+<div class="hero">
+  <div class="hero-text-container">
+    <h1><%= name %></h1>
+  </div>
+</div>
+<div class="blogs">
+<%
+if (locals.blogs)
+{
+  for (let i=blogs.length-1;i>=0;i--)
+  {
+    %>
+    <div class="blog-container">
+      <a class="delete" data-blogId="<%=i%>" blog-id-link="/blog/<%=i%>">Delete</a>
+
+      <a class="blog-content" href="/blog/<%= i%>">
+        <h2> <%= blogs[i].blogTitle%></h2>
+        <h3>&#9755; <%= blogs[i].blogAuthor%> &#9754;</h3>
+
+        <hr>
+      <%  if(typeof(blogs[i].blogContent) === "object") 
+            {
+              for (let y=0;y<blogs[i].blogContent.length;y++)
+              { %>
+                <p> <%= blogs[i].blogContent[y]%></p> <%
+              }
+            }
+          else
+            { %>
+              <p> <%= blogs[i].blogContent%></p> <%
+            } %>
+      </a>
+      <div></div>
+    </div>
+    <%
+  }
+} %>
+</div>
+<%- include("partials/footer.ejs") %>
+

@@ -1,0 +1,35 @@
+<!--
+*****THIS IS THE MAIN MENU PAGE
+1. Nav bar with logo
+2. Blog content with edit button
+4. Footer
+-->
+
+<%- include("partials/header.ejs") %>
+<div class="hero">
+  <div class="hero-text-container">
+    <h1><%= blog.blogTitle%></h1>
+    <h2>&#9755; by <%= blog.blogAuthor%> &#9754;</h2>
+  </div>
+</div>
+
+
+
+<div class="individual-blog-content blog-content-format">
+  <div class="inner-content">
+    <a href="/blogs/edit/<%= id %>" class="edit-btn"><div class="edit-btn">Edit</div></a>
+  <% if(typeof(blog.blogContent) === "object") { 
+    for (let i=0;i<blog.blogContent.length;i++)
+  { 
+    %> <p><%- blog.blogContent[i]%></p> <%
+  }} else
+  { %> <p><%= blog.blogContent%></p>  <%   } %>
+  
+  </div>
+  
+</div>
+
+
+
+
+<%- include("partials/footer.ejs") %>
