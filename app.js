@@ -7,7 +7,7 @@ const express = require("express");
 
 const app = express();
 const port = 3000;
-const address = "192.168.50.9";
+const address = "localhost";
 app.use(express.static("public"));
 app.use(express.urlencoded({extended: true}));
 app.listen(port, address, ()=>{console.log("port open @: http://" + address + ":" + port);});
